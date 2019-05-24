@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.ithinksky</groupId>
+    <artifactId>bpm-platform</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <name>bpm-platform</name>
+    <url>https://github.com/ithinksky/bpm-platform</url>
+
+    <modules>
+        <module>bpm-platform-idm</module>
+        <module>bpm-platform-modeler</module>
+    </modules>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <maven.compiler.encoding>UTF-8</maven.compiler.encoding>
+        <java.version>1.8</java.version>
+        <resource.delimiter>@</resource.delimiter>
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
+
+        <spring.version>5.1.6.RELEASE</spring.version>
+        <spring-boot.version>2.1.4.RELEASE</spring-boot.version>
+        <spring-cloud.version>Greenwich.RELEASE</spring-cloud.version>
+        <spring-druid.version>1.1.10</spring-druid.version>
+        <swagger2.version>2.7.0</swagger2.version>
+        <guava.version>23.0</guava.version>
+        <fastjson.version>1.2.38</fastjson.version>
+        <hutool-all.version>4.3.2</hutool-all.version>
+        <mysql.version>5.1.47</mysql.version>
+        <mybatis-spring.version>1.3.2</mybatis-spring.version>
+        <pagehelper-starter.version>1.2.5</pagehelper-starter.version>
+        <flowable.version>6.4.1</flowable.version>
+        <mybatis.version>1.3.2</mybatis.version>
+
+    </properties>
+
+    <dependencies>
+        <!--<dependency>-->
+            <!--<groupId>commons-io</groupId>-->
+            <!--<artifactId>commons-io</artifactId>-->
+            <!--<version>2.6</version>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+            <!--<groupId>org.mybatis</groupId>-->
+            <!--<artifactId>mybatis</artifactId>-->
+            <!--<version>3.5.0</version>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+            <!--<groupId>org.mybatis</groupId>-->
+            <!--<artifactId>mybatis-spring</artifactId>-->
+            <!--<version>2.0.0</version>-->
+        <!--</dependency>-->
+    </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>commons-io</groupId>
+                <artifactId>commons-io</artifactId>
+                <version>2.6</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mybatis</groupId>
+                <artifactId>mybatis</artifactId>
+                <version>3.5.0</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mybatis</groupId>
+                <artifactId>mybatis-spring</artifactId>
+                <version>2.0.0</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring-boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${guava.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-all</artifactId>
+                <version>${hutool-all.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid-spring-boot-starter</artifactId>
+                <version>${spring-druid.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mybatis.spring.boot</groupId>
+                <artifactId>mybatis-spring-boot-starter</artifactId>
+                <version>${mybatis-spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.pagehelper</groupId>
+                <artifactId>pagehelper-spring-boot-starter</artifactId>
+                <version>${pagehelper-starter.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger2</artifactId>
+                <version>${swagger2.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger-ui</artifactId>
+                <version>${swagger2.version}</version>
+            </dependency>
+
+            <!-- // admin-app -->
+            <dependency>
+                <groupId>org.flowable</groupId>
+                <artifactId>flowable-ui-admin-logic</artifactId>
+                <version>${flowable.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.flowable</groupId>
+                <artifactId>flowable-ui-admin-rest</artifactId>
+                <version>${flowable.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.flowable</groupId>
+                <artifactId>flowable-ui-admin-conf</artifactId>
+                <version>${flowable.version}</version>
+            </dependency>
+
+            <!-- // modeler-app -->
+            <dependency>
+                <groupId>org.flowable</groupId>
+                <artifactId>flowable-ui-modeler-logic</artifactId>
+                <version>${flowable.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.flowable</groupId>
+                <artifactId>flowable-ui-modeler-rest</artifactId>
+                <version>${flowable.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.flowable</groupId>
+                <artifactId>flowable-ui-modeler-conf</artifactId>
+                <version>${flowable.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.flowable</groupId>
+                <artifactId>flowable-bpmn-model</artifactId>
+                <version>${flowable.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.flowable</groupId>
+                <artifactId>flowable-bpmn-converter</artifactId>
+                <version>${flowable.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.flowable</groupId>
+                <artifactId>flowable-json-converter</artifactId>
+                <version>${flowable.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.flowable</groupId>
+                <artifactId>flowable-bpmn-layout</artifactId>
+                <version>${flowable.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.flowable</groupId>
+                <artifactId>flowable-form-model</artifactId>
+                <version>${flowable.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.flowable</groupId>
+                <artifactId>flowable-form-json-converter</artifactId>
+                <version>${flowable.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.flowable</groupId>
+                <artifactId>flowable-dmn-model</artifactId>
+                <version>${flowable.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.flowable</groupId>
+                <artifactId>flowable-dmn-xml-converter</artifactId>
+                <version>${flowable.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.flowable</groupId>
+                <artifactId>flowable-dmn-json-converter</artifactId>
+                <version>${flowable.version}</version>
+            </dependency>
+
+            <!-- // idm-app -->
+            <dependency>
+                <groupId>org.flowable</groupId>
+                <artifactId>flowable-ui-idm-logic</artifactId>
+                <version>${flowable.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.flowable</groupId>
+                <artifactId>flowable-ui-idm-rest</artifactId>
+                <version>${flowable.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.flowable</groupId>
+                <artifactId>flowable-ui-idm-conf</artifactId>
+                <version>${flowable.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.flowable</groupId>
+                <artifactId>flowable-idm-engine</artifactId>
+                <version>${flowable.version}</version>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-maven-plugin</artifactId>
+                    <version>${spring-boot.version}</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+
+    </build>
+
+</project>
+
