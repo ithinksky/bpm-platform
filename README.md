@@ -8,11 +8,11 @@ bpm platform based flowable
 由于尚未集成单点登录，故将项目部署在同一个容器中进行权限验证。。。
 
 - bpm-platform
-   - [x] bpm-platform-idm -- 授权
+   - [x] bpm-platform-idm -- 用户认证与授权
    - [x] bpm-platform-modeler -- 在线设计器
-   - [ ] bpm-platform-admin -- 流程管理
-   - [ ] bpm-platform-task -- 任务管理
-   - [ ] bpm-platform-rest -- 流程提供
+   - [x] bpm-platform-admin -- 流程管理
+   - [x] bpm-platform-task -- 任务管理
+   - [ ] bpm-platform-rest -- 流程API提供
 
 
 ## reference & recommend

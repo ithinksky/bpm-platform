@@ -240,5 +240,8 @@
 
     </dependencies>
 
+    <build>
+        <finalName>bpm-platform-modeler</finalName>
+    </build>
 
 </project>
