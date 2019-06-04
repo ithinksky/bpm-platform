@@ -18,10 +18,10 @@ bpm platform based flowable 6.4.1
 
 | 服务    | 项目    |  端口 |
 |:----------|:--------------------------|  :----  |
-| 用户认证与授权    | bpm-platform-idm   |      | 8080  |
-| 在线设计器    | bpm-platform-modeler |        | 8888  |
-| 任务管理    | bpm-platform-task |           | 9999  |
-| 流程管理    | bpm-platform-admin |      | 9988  |
+| 用户认证与授权 | bpm-platform-idm       | 8080  |
+| 在线设计器    | bpm-platform-modeler   | 8888  |
+| 任务管理      | bpm-platform-task      | 9999  |
+| 流程管理      | bpm-platform-admin     | 9988  |
 
 
 ## 工程预览
