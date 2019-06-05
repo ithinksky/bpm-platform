@@ -22,7 +22,7 @@ bpm platform based flowable 6.4.1
 | 在线设计器    | bpm-platform-modeler   | 8888  |
 | 流程管理      | bpm-platform-admin     | 9988  |
 | 任务管理      | bpm-platform-task      | 9999  |
-| Rest接口      | bpm-platform-rest     | 10000  |
+| 流程API提供      | bpm-platform-rest     | 10000  |
 
 
 ## 工程预览
