@@ -1,0 +1,79 @@
+
+debug: false
+
+spring:
+  profiles: dev
+  http:
+    encoding:
+      force: true
+      charset: UTF-8
+      enabled: true
+  security:
+    user:
+      name: admin
+      password: adminto
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driverClassName: com.mysql.jdbc.Driver
+    druid:
+      # 主库数据源
+      url: jdbc:mysql://localhost:3306/flowable?useUnicode=true&useSSL=false&characterEncoding=utf8
+      username: root
+      password: "adminto"
+      # 初始连接数
+      initial-size: 5
+      # 最大连接池数量
+      max-active: 5
+      # 最小连接池数量
+      min-idle: 5
+      # 配置获取连接等待超时的时间
+      max-wait: 60000
+      # 打开PSCache，并且指定每个连接上PSCache的大小
+      pool-prepared-statements: true
+      max-pool-prepared-statement-per-connection-size: 20
+      # 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
+      timeBetweenEvictionRunsMillis: 60000
+      # 配置一个连接在池中最小生存的时间，单位是毫秒
+      min-evictable-idle-time-millis: 300000
+      validation-query: SELECT 1 FROM DUAL
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: false
+      stat-view-servlet:
+        enabled: true
+      filter:
+        stat:
+          log-slow-sql: true
+          slow-sql-millis: 1000
+          merge-sql: false
+        wall:
+          config:
+            multi-statement-allow: true
+        slf4j:
+          statement-executable-sql-log-enable: true
+  resources:
+    chain:
+      html-application-cache: false
+
+flowable:
+  rest-api-enabled: true
+  app:
+    enabled: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  health:
+    ldap:
+      enabled: false
+
+server:
+  port: 10000
+  tomcat:
+    uri-encoding: UTF-8
+  servlet:
+    context-path: /bpm-platform-rest
+
+

@@ -1,0 +1,6 @@
+
+spring:
+  application:
+    name: bpm-platform-rest
+  profiles:
+    active: dev

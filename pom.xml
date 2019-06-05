@@ -17,6 +17,7 @@
         <module>bpm-platform-modeler</module>
         <module>bpm-platform-task</module>
         <module>bpm-platform-admin</module>
+        <module>bpm-platform-rest</module>
     </modules>
 
     <properties>
