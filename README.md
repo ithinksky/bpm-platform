@@ -28,10 +28,12 @@ bpm platform based flowable 6.4.1
 ##### 配置 `hosts`
 
 127.0.0.1       mysql.ithinksky.com
+
 127.0.0.1       bpm.ithinksky.com
 
-
 ## 工程预览
+
+默认账号密码： admin/test
 
 ### [用户认证与授权](http://bpm.ithinksky.com:8080/bpm-platform-idm/#/login)
 ![用户认证与授权](docs/images/idm.png)  
