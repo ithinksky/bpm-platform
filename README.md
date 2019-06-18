@@ -25,6 +25,11 @@ bpm platform based flowable 6.4.1
 | 流程API提供      | bpm-platform-rest     | 10000  |
 
 
+##### 配置 `hosts`
+
+127.0.0.1       mysql.ithinksky.com
+
+
 ## 工程预览
 
 ### [用户认证与授权](http://localhost:8080/bpm-platform-idm/#/login)

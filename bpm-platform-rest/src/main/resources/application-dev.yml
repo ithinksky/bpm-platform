@@ -17,7 +17,7 @@ spring:
     driverClassName: com.mysql.jdbc.Driver
     druid:
       # 主库数据源
-      url: jdbc:mysql://localhost:3306/flowable?useUnicode=true&useSSL=false&characterEncoding=utf8
+      url: jdbc:mysql://mysql.ithinksky.com:3306/flowable?useUnicode=true&useSSL=false&characterEncoding=utf8
       username: root
       password: "adminto"
       # 初始连接数
@@ -43,8 +43,8 @@ spring:
         enabled: true
       filter:
         stat:
-          log-slow-sql: true
-          slow-sql-millis: 1000
+          log-slow-sql: false
+          slow-sql-millis: 10000
           merge-sql: false
         wall:
           config:
@@ -59,7 +59,8 @@ flowable:
   rest-api-enabled: true
   app:
     enabled: true
-
+  database-schema-update: true
+  check-process-definitions: false
 management:
   endpoints:
     web:
