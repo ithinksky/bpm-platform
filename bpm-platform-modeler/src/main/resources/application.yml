@@ -41,11 +41,11 @@ flowable:
         password: test
         user: admin
       role-prefix:
-      idm-url: http://localhost:8080/bpm-platform-idm
+      idm-url: http://bpm.ithinksky.com:8080/bpm-platform-idm
   modeler:
     app:
       rest-enabled: true
-      deployment-api-url: http://localhost:9999/bpm-platform-task/app-api
+      deployment-api-url: http://bpm.ithinksky.com:9999/bpm-platform-task/app-api
 management:
   endpoints:
     jmx:

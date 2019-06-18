@@ -48,7 +48,7 @@ flowable:
         password: test
         user: admin
       role-prefix:
-      idm-url: http://mysql.ithinksky.com:8080/bpm-platform-idm
+      idm-url: http://bpm.ithinksky.com:8080/bpm-platform-idm
   cmmn:
     async:
       executor:

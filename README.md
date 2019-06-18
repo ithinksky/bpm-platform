@@ -28,25 +28,26 @@ bpm platform based flowable 6.4.1
 ##### 配置 `hosts`
 
 127.0.0.1       mysql.ithinksky.com
+127.0.0.1       bpm.ithinksky.com
 
 
 ## 工程预览
 
-### [用户认证与授权](http://localhost:8080/bpm-platform-idm/#/login)
+### [用户认证与授权](http://bpm.ithinksky.com:8080/bpm-platform-idm/#/login)
 ![用户认证与授权](docs/images/idm.png)  
 ![用户认证与授权](docs/images/idm-ps.png)  
 
-### [在线设计器](http://localhost:8888/bpm-platform-modeler/#/processes)
+### [在线设计器](http://bpm.ithinksky.com:8888/bpm-platform-modeler/#/processes)
 ![在线设计器](docs/images/modeler.png)  
 
-### [流程管理](http://localhost:9988/bpm-platform-admin/#/engine)
+### [流程管理](http://bpm.ithinksky.com:9988/bpm-platform-admin/#/engine)
 ![流程管理](docs/images/admin.png)  
 
-### [任务管理](http://localhost:9999/bpm-platform-task/#/)
+### [任务管理](http://bpm.ithinksky.com:9999/bpm-platform-task/#/)
 ![任务管理](docs/images/task.png)  
 
 
-### [Rest接口](http://localhost:10000/bpm-platform-rest/swagger-ui.html)
+### [Rest接口](http://bpm.ithinksky.com:10000/bpm-platform-rest/swagger-ui.html)
 ![Rest接口](docs/images/rest.png)  
 
 ## reference & recommend
