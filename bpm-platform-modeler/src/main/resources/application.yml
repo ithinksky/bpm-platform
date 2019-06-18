@@ -1,0 +1,62 @@
+---
+spring:
+  security:
+    filter:
+      dispatcher-types: REQUEST,FORWARD,ASYNC
+  aop:
+    proxy-target-class: false
+    auto: false
+  application:
+    name: flowable-ui-modeler
+  jmx:
+    default-domain: ${spring.application.name}
+  datasource:
+    password: adminto
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://mysql.ithinksky.com:3306/flowable?useUnicode=true&useSSL=false&characterEncoding=utf8
+    hikari:
+      minimumIdle: 5
+      idleTimeout: 300000
+      maximumPoolSize: 50
+      maxLifetime: 600000
+    username: root
+  servlet:
+    multipart:
+      max-file-size: 10MB
+  banner:
+    location: classpath:/org/flowable/spring/boot/flowable-banner.txt
+  liquibase:
+    enabled: false
+server:
+  port: 8888
+  servlet:
+    context-path: /bpm-platform-modeler
+flowable:
+  rest:
+    app:
+      authentication-mode: verify-privilege
+  common:
+    app:
+      idm-admin:
+        password: test
+        user: admin
+      role-prefix:
+      idm-url: http://localhost:8080/bpm-platform-idm
+  modeler:
+    app:
+      rest-enabled: true
+      deployment-api-url: http://localhost:9999/bpm-platform-task/app-api
+management:
+  endpoints:
+    jmx:
+      unique-names: true
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      roles: access-admin
+      show-details: when_authorized
+  health:
+    ldap:
+      enabled: false

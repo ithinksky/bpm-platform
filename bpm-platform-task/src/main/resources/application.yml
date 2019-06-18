@@ -1,0 +1,76 @@
+---
+spring:
+  security:
+    filter:
+      dispatcher-types: REQUEST,FORWARD,ASYNC
+  aop:
+    proxy-target-class: false
+    auto: false
+  application:
+    name: flowable-ui-task
+  jmx:
+    default-domain: ${spring.application.name}
+  datasource:
+    password: adminto
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://mysql.ithinksky.com:3306/flowable?useUnicode=true&useSSL=false&characterEncoding=utf8
+    hikari:
+      minimumIdle: 10
+      idleTimeout: 300000
+      maximumPoolSize: 50
+      maxLifetime: 600000
+    username: root
+  servlet:
+    multipart:
+      max-file-size: 10MB
+  banner:
+    location: classpath:/org/flowable/spring/boot/flowable-banner.txt
+server:
+  port: 9999
+  servlet:
+    context-path: /bpm-platform-task
+flowable:
+  rest:
+    app:
+      authentication-mode: verify-privilege
+  process:
+    async:
+      executor:
+        default-timer-job-acquire-wait-time-in-millis: 5000
+        default-async-job-acquire-wait-time-in-millis: 5000
+    definition-cache-limit: 512
+  task:
+    app:
+      rest-enabled: true
+  common:
+    app:
+      idm-admin:
+        password: test
+        user: admin
+      role-prefix:
+      idm-url: http://mysql.ithinksky.com:8080/bpm-platform-idm
+  cmmn:
+    async:
+      executor:
+        default-timer-job-acquire-wait-time-in-millis: 5000
+        default-async-job-acquire-wait-time-in-millis: 5000
+  form-field-validation-enabled: false
+  experimental:
+    debugger:
+      enabled: false
+  check-process-definitions: false
+  content:
+    storage:
+      create-root: true
+      root-folder: data/
+management:
+  endpoints:
+    jmx:
+      unique-names: true
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      roles: access-admin
+      show-details: when_authorized

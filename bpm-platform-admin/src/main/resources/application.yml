@@ -1,0 +1,113 @@
+---
+spring:
+  security:
+    filter:
+      dispatcher-types: REQUEST,FORWARD,ASYNC
+  aop:
+    proxy-target-class: false
+    auto: false
+  application:
+    name: flowable-ui-admin
+  jmx:
+    default-domain: ${spring.application.name}
+  servlet:
+    multipart:
+      max-file-size: 10MB
+  datasource:
+    password: adminto
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://mysql.ithinksky.com:3306/flowable?useUnicode=true&useSSL=false&characterEncoding=utf8
+    hikari:
+      minimumIdle: 5
+      idleTimeout: 300000
+      maximumPoolSize: 50
+      maxLifetime: 600000
+    username: root
+  banner:
+    location: classpath:/org/flowable/spring/boot/flowable-banner.txt
+  liquibase:
+    enabled: false
+server:
+  port: 9988
+  servlet:
+    context-path: /bpm-platform-admin
+flowable:
+  common:
+    app:
+      idm-admin:
+        password: test
+        user: admin
+      role-prefix:
+      idm-url: http://localhost:8080/bpm-platform-idm
+  admin:
+    app:
+      security:
+        encryption:
+          credentials-secret-spec: 9FGl73ngxcOoJvmL
+          credentials-i-v-spec: j8kdO2hejA9lKmm6
+      server-config:
+        app:
+          context-root: bpm-platform-task
+          password: test
+          server-address: http://localhost
+          user-name: admin
+          port: 9999
+          rest-root: app-api
+          name: Flowable App app
+          description: Flowable App REST config
+        process:
+          context-root: bpm-platform-task
+          server-address: http://localhost
+          password: test
+          user-name: admin
+          rest-root: process-api
+          port: 9999
+          name: Flowable Process app
+          description: Flowable Process REST config
+        form:
+          context-root: bpm-platform-task
+          server-address: http://localhost
+          password: test
+          user-name: admin
+          port: 9999
+          rest-root: form-api
+          name: Flowable Form app
+          description: Flowable Form REST config
+        dmn:
+          context-root: bpm-platform-task
+          server-address: http://localhost
+          password: test
+          user-name: admin
+          port: 9999
+          rest-root: dmn-api
+          name: Flowable DMN app
+          description: Flowable DMN REST config
+        cmmn:
+          context-root: bpm-platform-task
+          password: test
+          server-address: http://localhost
+          user-name: admin
+          port: 9999
+          rest-root: cmmn-api
+          name: Flowable CMMN app
+          description: Flowable CMMN REST config
+        content:
+          context-root: bpm-platform-task
+          server-address: http://localhost
+          password: test
+          user-name: admin
+          rest-root: content-api
+          port: 9999
+          name: Flowable Content app
+          description: Flowable Content REST config
+management:
+  endpoints:
+    jmx:
+      unique-names: true
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      roles: access-admin
+      show-details: when_authorized
