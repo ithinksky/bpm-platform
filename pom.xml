@@ -37,7 +37,7 @@
         <guava.version>23.0</guava.version>
         <fastjson.version>1.2.38</fastjson.version>
         <hutool-all.version>4.3.2</hutool-all.version>
-        <mysql.version>5.1.47</mysql.version>
+        <mysql.version>8.0.16</mysql.version>
         <mybatis-spring.version>1.3.2</mybatis-spring.version>
         <pagehelper-starter.version>1.2.5</pagehelper-starter.version>
         <flowable.version>6.4.1</flowable.version>
